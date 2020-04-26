@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../../layout/head')%>
+    <body>
+    <%- include('../../layout/header')%>
+    <p>hello</p>
+
+        <a href="../searches/new">Book Search</a>
+    <main>
+        
+        <form action="/addToDataBaseForm" method="POST">
+        <legend>Add a book </legend>
+        
+         <input type="text" name="title" placeholder=" title">
+            <input type="text" name="author" placeholder="author ">
+            <input type="number" name="isbn" placeholder="isbn">
+            <textarea name="description" placeholder=" Description" cols="30" rows="10"></textarea>
+            <button type ='submit'> Add book</button>
+    </main>
+    <%- include('../../layout/footer')%>
+    </body>
+</html>

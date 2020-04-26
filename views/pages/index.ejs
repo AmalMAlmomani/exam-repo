@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../layout/head')%>
+    <body>
+    <%- include('../layout/header')%>
+    <p>hello</p>
+        <a href="../searches/new">Book Search</a>
+        <a href="/addBookForm">Add Book</a>
+
+    <main>
+        
+        <% dataBaseBook.forEach(book => { %>
+        <img src="<%= book.image_url %>" alt="image">
+        <h2><%= book.title %></h2>
+        <h3><%= book.author %></h3>
+        <button type="submit"><a href="/booksDetail/<%= book.id %>">view details</a></button>
+
+
+        <% }) %>
+     
+    </main>
+    <%- include('../layout/footer')%>
+    </body>
+</html>

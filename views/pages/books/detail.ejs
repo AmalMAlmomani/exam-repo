@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../../layout/head')%>
+    <body>
+    <%- include('../../layout/header')%>
+    <p>hello</p>
+    <a href="../searches/new">Book Search</a>
+    <main>
+          <%console.log('book detail',  book); %>
+        <img src="<%= book.image_url %>" alt="image">
+        <h2><%= book.title %></h2>
+        <h3><%= book.author %></h3>
+        <p><%= book.description %></p>
+        <p><%= book.isbn %></p> 
+
+
+       
+        <form action="/update/<%= book.id %>?_method=put" method="post">
+        <input type="text" name="title" value="<%= book.title %>">
+        <input type="text" name="author" value="<%= book.author %>">
+        <input type="text" name="description" value="<%= book.description %>"> 
+        <button type="submit">Update book</button>
+        </form>
+
+
+        <form action="/delete/<%= book.id %>?_method=delete" method="post">
+            <button type="submit">Delete book</button>
+       </form>
+       
+        
+    </main>
+    <%- include('../../layout/footer')%>
+    </body>
+</html>
